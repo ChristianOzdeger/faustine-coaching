@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}réinitialisez votre mot de passe{% endblock %}
+
+{% block body %}
+<div class="contact-body">
+    <div class="au-content">
+    	<div class="container">
+    		<div class="row justify-content-center">
+    			<div class="col-12 col-lg-5 ">
+                {{ form_start(resetForm) }}
+                    <h5>Modification de votre mot de passe</h5>
+    				<div class="champ">
+                    {{ form_row(resetForm.plainPassword) }}
+                    </div>
+                    <div class="champ">
+    					<div class="col text-center">
+							<button class="btn btn-primary" type="submit">{{ button_label|default('Envoyer') }}</button>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>  
+    {{ form_end(resetForm) }}
+{% endblock %}

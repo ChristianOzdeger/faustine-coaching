@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+	<!-- Fil d'ariane -->
+	<div class="fil_ariane">
+		<div class="fil-container">
+			<h2>Contact</h2>
+            <p class="text-center">
+            	<a href="{{ path('accueil') }}">Accueil</a>&nbsp;
+            	<i class="fa fa-long-arrow-right"></i>&nbsp;
+            	<span>Contact</span>
+            </p>
+		</div>
+	</div>
+	<!-- Fil d'ariane -->
+    
+    <!-- Start Google Map Section -->
+    <div id="map">
+        <div class="map-wrapper">
+            <div id="map-container">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2869.854416875001!2d4.956303815509148!3d44.00373537911085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b58cbf26bd8f73%3A0x32fd0e248ad263ab!2s208%20Avenue%20Ernest%20Perrin%2C%2084210%20Althen-des-Paluds!5e0!3m2!1sfr!2sfr!4v1607697279001!5m2!1sfr!2sfr" width="600" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+        </div>
+    </div>
+	<!-- End Google Map Section -->
+
+	<!-- Contact Body -->
+	<div class="contact-body">
+		<div class="au-content">
+			<div class="row">
+				<div class="col-12 col-xl-4">
+					<div class="cnt-bd">
+						<div class="abt-bx">
+							<i class="fa fa-map-marker"></i>
+							<h4>Adresse :</h4>
+							<p>208 avenue Ernest Perrin</p>
+							<p>84210 Althen-des-Paluds</p>
+						</div>
+						<div class="abt-bx">
+							<i class="fa fa-phone"></i>
+							<h4>N° téléphone :</h4>
+							<p>07 85 62 07 62</p>
+						</div>
+						<div class="abt-bx">
+							<i class="fa fa-envelope-o"></i>
+							<h4>Envoyer nous un message</h4>
+							<p id="contact-mail">moc.liamg@essiruem.enitsuaf</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-xl-8">
+				{{ form_start(form) }}
+					<div class="row">
+						<div class="col-12">
+							<div class="champ">
+								<div class="col-12 col-sm-3">{{ form_label(form.nom) }}<span>*</span></div>
+								<div class="col-12 col-sm-9">{{ form_widget(form.nom) }}</div>
+								{{ form_errors(form.nom) }}
+							</div>
+								<div class="champ">
+								<div class="col-12 col-sm-3">{{ form_label(form.prenom) }}<span>*</span></div>
+								<div class="col-12 col-sm-9">{{ form_widget(form.prenom) }}</div>
+								{{ form_errors(form.prenom) }}
+							</div>
+							<div class="champ">
+								<div class="col-12 col-sm-3">{{ form_label(form.email) }}<span>*</span></div>
+								<div class="col-12 col-sm-9">{{ form_widget(form.email) }}</div>
+								{{ form_errors(form.email) }}
+							</div>
+							<div class="champ">
+								<div class="col-12 col-sm-3">{{ form_label(form.telephone) }}</div>
+								<div class="col-12 col-sm-9">{{ form_widget(form.telephone) }}</div>
+								{{ form_errors(form.telephone) }}
+							</div>
+							<div class="champ">
+								<div class="col-12 col-sm-3">{{ form_label(form.subject) }}</div>
+								<div class="col-12 col-sm-9">{{ form_widget(form.subject) }}</div>
+								{{ form_errors(form.subject) }}
+							</div>   
+							<div class="champ">
+								<div class="col-12 col-sm-3">{{ form_label(form.message) }}<span>*</span></div>
+								<div class="col-12 col-sm-9">{{ form_widget(form.message) }}</div>
+								{{ form_errors(form.message) }}
+							</div>
+							<div class="champ">
+								<div class="col-12 col-sm-9">
+									{{ form_widget(form.checkbox) }}
+									<em>En cochant cette case vous acceptez l'entreprise Faustine Coaching à vous contacter et à stocker vos informations à des fin non commerciales </em><span>*</span>
+								</div>
+								{{ form_errors(form.checkbox) }}
+							</div>
+							<div class="col text-center mt-4">
+								<button class="btn btn-primary" type="submit">{{ button_label|default('Envoyer') }}</button>
+							</div>
+						</div>
+					</div>
+				{{ form_end(form) }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<!-- Contact Body -->
+	{% endblock %}
+
+	{% block scriptfc %}
+	 	<script src="{{asset("assets/js/scriptfc.js")}}"></script>
+	{% endblock %}

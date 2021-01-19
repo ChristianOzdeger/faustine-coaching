@@ -1,0 +1,460 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('messages') %}
+    <div class="row alert alert-success w-30 my-4">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    <!-- Home Design -->
+    <div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+        <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
+        <div id="rev_slider_4_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
+            <ul><!-- SLIDE  -->
+                <li data-index="rs-16" data-transition="zoomout" data-slotamount="default" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Slide One" data-description=""  class="thumbonerev">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ asset('assets/img-thm/home-pics/slider1.jpg') }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 background-color:rgba(0, 0, 0, 0.4);-->
+                    <div class="tp-caption tp-shape tp-shapewrapper"
+                        id="rs-1-layer-1" 
+                        data-x="['center','center','center','center']" 
+                        data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" 
+                        data-voffset="['0','0','0','0']" 
+                        data-width="full" 
+                        data-height="full" data-whitespace="nowrap" 
+                        data-transform_idle="o:1;" 
+                        data-transform_in="opacity:0;s:1000;e:Power2.easeInOut;" 
+                        data-transform_out="opacity:0;s:1000;s:1000;" 
+                        data-start="0" 
+                        data-basealign="slide" 
+                        data-responsive_offset="off" 
+                        data-responsive="off" style="z-index: 5;background-color:rgba(0, 0, 0, 0.6)">
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0 text-uppercase"
+                        id="slide-1-layer-2" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                        data-fontsize="['30','30','30','30']"
+                        data-lineheight="['70','70','70','50']"
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"
+                        data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                        data-start="1000" 
+                        data-splitin="chars" 
+                        data-splitout="none" 
+                        data-responsive_offset="on" 
+                        data-elementdelay="0.05"                                    
+                        style="z-index: 5; font-weight: 900; white-space: nowrap;">Suivi
+                    </div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0 text-uppercase"
+                        id="slide-1-layer-3" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['62','62','62','61']" 
+                        data-fontsize="['45','45','45','45']"
+                        data-lineheight="['70','70','70','50']"
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                        data-start="1500" 
+                        data-splitin="none" 
+                        data-splitout="none" 
+                        data-responsive_offset="on" 
+                        style="z-index: 6; letter-spacing: 0px; font-weight: 600; white-space: nowrap; color: #32C1CE">Personnalisé
+                    </div>
+
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption NotGeneric-Icon tp-resizeme rs-parallaxlevel-0 text-uppercase"
+                        id="slide-1-layer-4" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" 
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"
+                        data-style_hover="cursor:default;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                        data-start="2000" 
+                        data-splitin="none" 
+                        data-splitout="none" 
+                        data-responsive_offset="on"                                     
+                        style="z-index: 7; white-space: nowrap;">Profitez d'un
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-17" data-transition="fadetotopfadefrombottom" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500" data-rotate="0" data-saveperformance="off"  data-title="Slide Two" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ asset('assets/img-thm/home-pics/slider2.jpg') }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper"
+                        id="rs-2-layer-1" 
+                        data-x="['center','center','center','center']" 
+                        data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" 
+                        data-voffset="['0','0','0','0']" 
+                        data-width="full" 
+                        data-height="full" data-whitespace="nowrap" 
+                        data-transform_idle="o:1;" 
+                        data-transform_in="opacity:0;s:1000;e:Power2.easeInOut;" 
+                        data-transform_out="opacity:0;s:1000;s:1000;" 
+                        data-start="0" 
+                        data-basealign="slide" 
+                        data-responsive_offset="off" 
+                        data-responsive="off" style="z-index: 5;background-color:rgba(0, 0, 0, 0.7);border-color:rgba(0, 0, 0, 0);">
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-3"
+                        id="slide-2-layer-2" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                        data-fontsize="['70','70','70','45']"
+                        data-lineheight="['70','70','70','50']"
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rZ:-35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:0px;" 
+                        data-mask_out="x:inherit;y:inherit;" 
+                        data-start="1000" 
+                        data-splitin="chars" 
+                        data-splitout="none" 
+                        data-responsive_offset="on" 
+                        data-elementdelay="0.05"                                    
+                        style="z-index: 5; white-space: nowrap;">Pilates et Stretching
+                    </div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-2"
+                        id="slide-2-layer-3" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['60','60','60','55']" 
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:[100%];" 
+                        data-mask_out="x:inherit;y:inherit;" 
+                        data-start="1500" 
+                        data-splitin="none" 
+                        data-splitout="none" 
+                        data-responsive_offset="on"                                     
+                        style="z-index: 6; white-space: nowrap;">
+                           {# <button class="btn btn-trspt mt-5">READ MORE</button> #}
+                        <!--<a href="#" class="btn btn-default btn-lg et-btn-thm">Read More <i class="fa fa-arrow-right"></i></a>--> 
+                    </div>
+
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption NotGeneric-Icon tp-resizeme rs-parallaxlevel-1"
+                        id="slide-2-layer-4" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['-68','-68','-68','-68']" 
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"
+                        data-style_hover="cursor:default;"                       
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                        data-start="2000" 
+                        data-splitin="none" 
+                        data-splitout="none" 
+                        data-responsive_offset="on"                                     
+                        style="z-index: 7; white-space: nowrap;  color: #32C1CE;">Améliorez votre mobilité
+
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-18" data-transition="zoomin" data-slotamount="7" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="Slide Three" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="{{ asset('assets/img-thm/home-pics/slider3.jpg') }}"  alt=""  data-bgposition="center center" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper"
+                        id="rs-3-layer-1" 
+                        data-x="['center','center','center','center']" 
+                        data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" 
+                        data-voffset="['0','0','0','0']" 
+                        data-width="full" 
+                        data-height="full" data-whitespace="nowrap" 
+                        data-transform_idle="o:1;" 
+                        data-transform_in="opacity:0;s:1000;e:Power2.easeInOut;" 
+                        data-transform_out="opacity:0;s:1000;s:1000;" 
+                        data-start="0" 
+                        data-basealign="slide" 
+                        data-responsive_offset="off" 
+                        data-responsive="off" style="z-index: 5;background-color:rgba(0, 0, 0, 0.4);border-color:rgba(0, 0, 0, 0);">
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0"
+                        id="slide-3-layer-2" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['15','15','15','15']" 
+                        data-width="500"
+                        data-height="140"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"                       
+                        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:0px;" 
+                        data-mask_out="x:inherit;y:inherit;" 
+                        data-start="2000" 
+                        data-responsive_offset="on"                                     
+                        style="z-index: 5;background: linear-gradient(-90deg, rgba(2, 167, 182, 0.7), rgba(1, 82, 89, 0.7));;border-color:rgba(0, 0, 0, 0.50);"> 
+                    </div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption NotGeneric-Title tp-resizeme rs-parallaxlevel-0"
+                        id="slide-3-layer-3" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['-60','-60','-60','-60']" 
+                        data-fontsize="['48','48','48','45']"
+                        data-lineheight="['70','70','70','50']"
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"                       
+                        data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                        data-start="1000" 
+                        data-splitin="chars" 
+                        data-splitout="none" 
+                        data-responsive_offset="on" 
+                        data-elementdelay="0.05"                                    
+                        style="z-index: 6; white-space: nowrap;"> PROFESSIONNEL 
+                    </div>
+
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption NotGeneric-SubTitle tp-resizeme rs-parallaxlevel-0"
+                        id="slide-3-layer-4" 
+                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['52','51','51','31']" 
+                        data-width="none"
+                        data-height="none"
+                        data-whitespace="nowrap"
+                        data-transform_idle="o:1;"                       
+                        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
+                        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
+                        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
+                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
+                        data-start="1500" 
+                        data-splitin="none" 
+                        data-splitout="none" 
+                        data-responsive_offset="on"                                 
+                        style="z-index: 7; white-space: nowrap;"> COACH DIPLOMÉ
+                    </div>
+                </li>
+            </ul>
+            <div class="tp-static-layers"></div>
+            <div class="tp-bannertimer" style="height: 7px; background-color: rgba(255, 255, 255, 0.25);"></div>    
+        </div>
+    </div>
+    <!-- Home Design -->
+
+    <!-- Activités -->
+    <div class="activity">
+	    	<h2 class="grd-title text-center"><span>Services</span> proposés</h2>
+    	<div class="row justify-content-center">
+    		<div class="col-12 col-lg-4">
+    			<div class="activity-block-1">
+                    <div class="act-container">
+                        <a href="{{ path('services_sport') }}">
+                            <button class="btn btn-trspt">En savoir plus</button>
+                        </a>
+                    </div>
+    			</div>
+                <div class="act-hed">
+                    <h5 class="text-dark text-center">Sport</h5>
+                    <hr>
+                </div>
+                <p class="text-muted text-center">
+                Un programme de sport sur mesure et 100% personnalisé selon tes objectifs
+                </p>                
+            </div>
+    		<div class="col-12 col-lg-4">
+    			<div class="activity-block-2">
+                    <div class="act-container">
+                        <a href="{{ path('services_nutrition') }}">
+                            <button class="btn btn-trspt">En savoir plus</button>
+                        </a>
+                    </div>
+    			</div>
+                <div class="act-hed">
+                    <h5 class="text-dark text-center">Nutrition</h5>
+                    <hr>
+                </div>
+                <p class="text-muted text-center">
+                Suivi et accompagnement nutritionnel entièrement adapté à vos attentes et à vos besoins
+                </p>
+            </div>
+    	</div>
+    </div>
+    <!-- Activités -->
+{% endblock %}
+{% block mainPageFooter %}
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <a href="https://www.facebook.com/faustine.coaching" target="_blank"><img class="social-media" src="{{ asset('assets/img-thm/icons/facebook-logo.png') }}" alt="logo facebook"></a>
+                <a href="https://www.instagram.com/faustine_coaching/?hl=fr" target="_blank"><img class="social-media ml-2" src="{{ asset('assets/img-thm/icons/instagram-logo.png') }}" alt="logo instagram"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+
+    <!-- Scroll to top -->
+    <a class="scrolltotop" href="#">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Scroll to top -->
+        <!-- JQUERY LIBRARY  -->
+        <script src="{{ asset('assets/jquery/jquery.min.js') }}"></script>
+        <!-- BOOTSTRAP CORE JAVASCRIPT  -->
+        <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- WOW  SCRIPT  -->
+        <script src="{{ asset('assets/js/wow.js') }}"></script>
+        <!-- CUSTOM  SCRIPT  -->
+        <script src="{{ asset('assets/js/script.js') }}"></script>
+        <!-- REVOLUTION JS FILES -->
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/jquery.themepunch.tools.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
+        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+        (Load Extensions only on Local File Systems ! 
+        The following part can be removed on Server for On Demand Loading) -->
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.actions.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.migration.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/extensions/revolution.extension.video.min.js') }}"></script>
+        
+        <!-- END REVOLUTION SLIDER -->
+        <script type="text/javascript">
+            $('[data-toggle="tooltip"]').tooltip()
+            var tpj=jQuery;         
+            var revapi4;
+            tpj(document).ready(function() {
+            if(tpj("#rev_slider_4_1").revolution == undefined){
+                revslider_showDoubleJqueryError("#rev_slider_4_1");
+            }else{
+                revapi4 = tpj("#rev_slider_4_1").show().revolution({
+                    sliderType:"auto",
+                    sliderLayout:"fullwidth",
+                    dottedOverlay:"none",
+                    delay:9000,
+                    navigation: {
+                        keyboardNavigation:"off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation:"off",
+                        onHoverStop:"off",
+                        touch:{
+                            touchenabled:"on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        }
+                        ,
+                        arrows: {
+                            style:"zeus",
+                            enable:true,
+                            hide_onmobile:true,
+                            hide_under:600,
+                            hide_onleave:true,
+                            hide_delay:200,
+                            hide_delay_mobile:1200,
+                            tmp:'<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div> </div>',
+                            left: {
+                                h_align:"left",
+                                v_align:"center",
+                                h_offset:30,
+                                v_offset:0
+                            },
+                            right: {
+                                h_align:"right",
+                                v_align:"center",
+                                h_offset:30,
+                                v_offset:0
+                            }
+                        }
+                    },
+                    viewPort: {
+                        enable:true,
+                        outof:"pause",
+                        visible_area:"80%"
+                    },
+                    responsiveLevels:[1240,1024,778,480],
+                    gridwidth:[1240,1024,778,480],
+                    gridheight:[800,800,500,400],
+                    lazyType:"none",
+                    parallax: {
+                        type:"mouse",
+                        origo:"slidercenter",
+                        speed:2000,
+                        levels:[2,3,4,5,6,7,12,16,10,50],
+                    },
+                    shadow:0,
+                    spinner:"off",
+                    stopLoop:"off",
+                    stopAfterLoops:-1,
+                    stopAtSlide:-1,
+                    shuffle:"off",
+                    autoHeight:"off",
+                    hideThumbsOnMobile:"off",
+                    hideSliderAtLimit:0,
+                    hideCaptionAtLimit:0,
+                    hideAllCaptionAtLilmit:0,
+                    debugMode:false,
+                    fallbacks: {
+                        simplifyAll:"off",
+                        nextSlideOnWindowFocus:"off",
+                        disableFocusListener:false,
+                    }
+                });
+            }
+            }); /*ready*/
+        </script>
+</body>
+</html>
+{% endblock %}

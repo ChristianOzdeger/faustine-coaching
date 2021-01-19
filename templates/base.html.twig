@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Fytness" content="sport,fitness,gym">
+    <title>{% block title %}{% endblock %} - Faustine Coaching</title>
+    <link rel="shortcut icon" href="{{ asset('assets/img-thm/logo-faustine-coaching.png') }}" />
+    <!-- BOOTSTRAP STYLESHEET -->
+    <link rel="stylesheet"  href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <!-- FONT AWESOME STYLES -->
+    {# <link rel="stylesheet"  href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}"> #}
+    {# <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">     #}
+    <script src="https://kit.fontawesome.com/e64a6496b9.js" crossorigin="anonymous"></script>
+    <!-- CUSTOMS STYLES -->
+    <link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/nav-and-footer-styles.css') }}">
+    <!-- REVOLUTION LAYERS STYLES -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/revolution-slider/css/settings.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/revolution-slider/css/layers.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/revolution-slider/css/navigation.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <div class=" navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <div class="navbar-brand d-lg-none">
+                <a href="{{ path('accueil') }}"><img class="logo" src="{{ asset('assets/img-thm/logo-faustine-coaching.png') }}"></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('sport_list') }}">S&Eacute;ANCE DE SPORTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('recette_list') }}">RECETTES</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href=""> OFFRE COACHING</a>
+                        <ul class="dropdown-menu sub-menu">
+                            <li><a class="nav-link" href="{{ path('services_sport') }}">Sport</a></li>
+                            <li><a class="nav-link" href="{{ path('services_nutrition') }}">Nutrition</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="navbar-brand" href="{{ path('accueil') }}"><img class="logo" src="{{ asset('assets/img-thm/logo-faustine-coaching.png') }}"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('about') }}">A PROPOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('contact') }}">CONTACT</a>
+                    </li>
+                    {# si utilisateur connecté admin on affiche l'admin dashbord #}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item d-flex">
+                            <a class="nav-link" href="{{ path('admin') }}">MON COMPTE</a>
+                            <div id="nav-separation">/</div>
+                            <a class="nav-link" href="{{ path('app_logout') }}">DECONNEXION</a>
+                        </li>
+                    {# si utilisateur connecté user on afiche le compte utilisateur #}
+                    {% elseif is_granted('ROLE_USER') %}
+                        <li class="nav-item d-flex">
+                            <a class="nav-link" href="{{ path('user_account_read') }}">MON COMPTE</a>
+                            <div id="nav-separation">/</div>
+                            <a class="nav-link" href="{{ path('app_logout') }}">DECONNEXION</a>
+                        </li>
+                    {% else %}
+                    {# sinon simple visiteur #}
+                        <li class="nav-item d-flex">
+                            <a class="nav-link" href="{{ path('user_account_add') }}">INSCRIPTION</a>
+                            <div id="nav-separation">/</div>
+                            <a class="nav-link" href="{{ path('app_login') }}">CONNEXION</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+{% block body %}{% endblock %}
+{% block mainPageFooter %}
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <a href="https://www.facebook.com/faustine.coaching" target="_blank"><img class="social-media" src="{{ asset('assets/img-thm/icons/facebook-logo.png') }}" alt="logo facebook"></a>
+                <a href="https://www.instagram.com/faustine_coaching/?hl=fr" target="_blank"><img class="social-media ml-2" src="{{ asset('assets/img-thm/icons/instagram-logo.png') }}" alt="logo instagram"></a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+
+    <!-- Scroll to top -->
+    <a class="scrolltotop" href="#">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Scroll to top -->
+
+    <!-- JQUERY LIBRARY  -->
+    <script src="{{ asset('assets/jquery/jquery.min.js') }}"></script>
+    <!-- BOOTSTRAP CORE JAVASCRIPT  -->
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- WOW  SCRIPT  -->
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <!-- CUSTOM  SCRIPT  -->
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+    <!-- REVOLUTION JS FILES -->
+    <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/jquery.themepunch.tools.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/revolution-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
+     {% block scriptfc %} {% endblock %}
+</body>
+</html>
+{% endblock %}

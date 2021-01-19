@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+	<!-- Fil d'ariane -->
+	<div class="fil_ariane">
+		<div class="fil-container">
+			<h2>Inscription</h2>
+            <p class="text-center">
+            	<a href="{{ path('accueil') }}">Accueil</a>&nbsp;
+            	<i class="fa fa-long-arrow-right"></i>&nbsp;
+            	<span>Inscription</span>
+            </p>
+		</div>
+	</div>
+	<!-- Fil d'ariane -->
+    {% for message in app.flashes('messages') %}
+    <div class="row alert alert-success mt-5">
+        {{ message|raw }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    <!-- Servives Section -->
+    
+	<!-- Authorisation-content -->
+<div class="contact-body">
+	<div class="au-content">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-lg-6">
+						{{ form_start(form) }}
+						<div class="champ">
+							<div class="col-12 col-sm-3">{{ form_label(form.nom) }}</div>
+							<div class="col-12 col-sm-9">{{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}</div>	
+							{{ form_errors(form.nom) }}
+						</div>
+						<div class="champ">
+							<div class="col-12 col-sm-3">{{ form_label(form.prenom) }}</div>
+							<div class="col-12 col-sm-9">{{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}</div>	
+							{{ form_errors(form.prenom) }}
+						</div>
+						<div class="champ">
+							<div class="col-12 col-sm-3">{{ form_label(form.email) }}</div>
+							<div class="col-12 col-sm-9">{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}</div>	
+							{{ form_errors(form.email) }}
+						</div>
+						<div class="champ">
+							<div class="col-12 col-sm-3">{{ form_label(form.telephone) }}</div>
+							<div class="col-12 col-sm-9">{{ form_widget(form.telephone, {'attr': {'class': 'form-control'}}) }}</div>	
+							{{ form_errors(form.telephone) }}
+						</div>
+						<div class="champ">
+							<div class="col-12 col-sm-9">{{ form_widget(form.password) }}</div>	
+							{{ form_errors(form.password) }}
+						</div>                           
+						<div class="champ">
+							<div class="col text-center">
+								<button class="btn btn-primary" type="submit">{{ button_label|default('Enregistrer') }}</button>
+							</div>
+						</div>
+					{{ form_end(form) }}		
+				</div>    
+			</div>
+		</div>
+	</div>
+</div>
+	<!-- Services Section -->
+{% endblock %}

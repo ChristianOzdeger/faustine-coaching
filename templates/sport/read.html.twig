@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ sport.titre }}{% endblock %}
+
+{% block body %}
+{% set dossierImages =  asset('uploads/photos/sports/') %}
+<!-- Fil d'ariane -->
+<div class="fil_ariane">
+	<div class="fil-container">
+		<h2>{{ sport.titre }}</h2>
+		<p class="text-center">
+			<a href="{{ path('accueil') }}">Accueil</a>&nbsp;
+			<i class="fa fa-long-arrow-right"></i>&nbsp;
+			<a href="{{path('sport_list')}}">Les Séances de sport</a>&nbsp;
+			<i class="fa fa-long-arrow-right"></i>&nbsp;
+			<span>{{ sport.titre }}</span>
+		</p>
+	</div>
+</div>
+<!-- Fil d'ariane -->
+
+<div class="blg-dtl-cnt">
+	<div class="row">
+		<div class="col-12 col-lg-8 text-center">
+			<div class="art-dtl">
+				<h2 class="mb-3">{{ sport.titre }}</h2>
+				<div class="embed-responsive embed-responsive-16by9 text-center">
+				{{ MediaObject|raw }}
+				</div>
+				<p><i class="art-ind">{{ sport.createdAt|date('d M Y') }}</i></p>
+				<div class="row">
+					<div class="col-12">
+						<p>Lien Youtube : <a href="{{ sport.lienYoutube }}">{{ sport.lienYoutube }}</a></p>
+						<p>Dur&eacutee de la s&eacuteance : {{ sport.dureeSeance }} min</p>
+					</div>
+				</div>
+				<p>
+					{{ sport.description|raw }}
+				</p>
+			</div>
+			<div class="col-12 text-center">
+				<a href="{{ path('sport_list') }}">
+					<h3 class="d-inline"><span class="btn btn-primary text-white mr-3 ">Retour</span></h3>
+				</a>
+			</div>
+		</div>
+		<div class="col-12 col-lg-4">
+			<div class="art-cat">
+				<h3>Th&egraveme(s)</h3>
+				{% for theme in sport.themes %}
+				<span class="badge bg-primary text-white mr-2">{{ theme.libelle }}</span>
+				{% endfor %}
+			</div>
+			<div class="art-rct-pst">
+				<h3>Les derni&egraveres s&eacuteances de sport</h3>
+				{% for derniersSport in derniersSports %}
+				<div class="row">
+					<div class="col-5">
+						<a href="{{ path('sport_read', {slug:derniersSport.slug})}}"><img class="img-fluid img-thumbnail" src="{{ dossierImages }}{{ derniersSport.photoName }}"></a>
+					</div>
+					<div class="col-7">
+						<h5><a href="{{ path('sport_read', {slug:derniersSport.slug})}}">{{ derniersSport.titre }}</a></h5>
+						<p>{{ derniersSport.createdAt|date('j F Y') }}</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="art-pop">
+				<h3>S&eacuteance de sport </h3>
+				<div class="art-slider">
+					<div id="slidersControl" class="carousel" data-ride="carousel">
+						<div class="carousel-inner">
+							{% for key,sportAleatoire in sportsAleatoires %}
+							<div class="carousel-item {% if key == 0 %}active {% endif %}">
+								<a href="{{ path('sport_read', {slug:sportAleatoire.slug})}}"><img class="img-fluid img-thumbnail" src="{{ dossierImages }}{{ sportAleatoire.photoName }}"></a>
+								<div class="car-lgd">
+									<p>{{ sportAleatoire.createdAt|date('j F Y') }}</p>
+									<h5><a href="{{ path('sport_read', {slug:sportAleatoire.slug})}}">{{ sportAleatoire.titre }}</a></h5>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<!--Les controleurs
+						<a class="carousel-control-prev" href="#slidersControl" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						</a>
+						<a class="carousel-control-next" href="#slidersControl" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						</a>-->
+						<!--Les controleurs-->
+						<!-- Les indicateurs -->
+						<ol class="carousel-indicators">
+							{% for index,sportAleatoire in sportsAleatoires %}
+							<li data-target="#slidersControl" data-slide-to="{{ index }}" {% if index == 0 %}class="active"
+								{% endif %}></li>
+							{% endfor %}
+						</ol>
+						<!-- Les indicateurs -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Blog-detail-content -->
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends '@!EasyAdmin/layout.html.twig' %} 
+
+{% block sidebar %}
+    <div class="col text-center mb-3">
+        <button class="btn btn-primary"><a class ="text-light" href="{{ path('accueil') }}">Retour accueil</a></button>
+    </div>
+    <section class="sidebar">
+        {% block main_menu_wrapper %}
+            {{ include(ea.templatePath('main_menu')) }}
+        {% endblock main_menu_wrapper %}
+    </section>
+{% endblock sidebar %}

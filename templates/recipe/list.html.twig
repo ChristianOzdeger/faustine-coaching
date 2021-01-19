@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+ 
+{% block title %}Les recettes{% endblock %}
+
+{% block body %}
+{% set dossierImages =  asset('uploads/photos/recettes/') %}
+
+<!-- Fil d'ariane -->
+<div class="fil_ariane">
+  <div class="fil-container">
+    <h2>Les recettes</h2>
+    <p class="text-center">
+      <a href="{{ path('accueil') }}">Accueil</a>&nbsp;
+      <i class="fa fa-long-arrow-right"></i>&nbsp;
+      <span>Les recettes</span>
+    </p>
+  </div>
+</div>
+<!-- Fil d'ariane -->
+<div class="serv-page">
+    <div class="tab-pane active" id="contenu1">
+        <div class="col-12 text-center displayOnSmallDevice">
+            <div class="dropdown">
+                {% set categorieSelectionne = "Tous" %}
+                {% for categorie in categories %}
+                    {% if app.request.get('categorie') == categorie.slug %}
+                        {% set categorieSelectionne = categorie.libelle %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ categorieSelectionne }}</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                {% if categorieSelectionne != "Tous" %}
+                    <a class="dropdown-item" href="{{ path('recette_list') }}">Tous</a>
+                {% endif %}
+                {% for categorie in categories %}
+                    {% if app.request.get('categorie') != categorie.slug %}
+                      <a class="dropdown-item" href="{{ path('recette_list', {categorie:categorie.slug }) }}">{{ categorie.libelle }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12 text-center displayOnOther">
+            {% if app.request.get('categorie') == 'tout' %}
+                <a href="{{ path('recette_list') }}" class="d-inline-block">
+                    <h3 class="d-inline"><span class="btn btn-primary text-white mr-3 mb-3 active">Tous</span></h3>
+                </a>
+            {% else %}
+                <a href="{{ path('recette_list') }}" class="d-inline-block">
+                    <h3 class="d-inline"><span class="btn btn-primary text-white mr-3 mb-3">Tous</span></h3>
+                </a>
+            {% endif %}
+            {% for categorie in categories %}
+                {% if app.request.get('categorie') == categorie.slug %}
+                    <a href="{{ path('recette_list', {categorie:categorie.slug, }) }}" class="d-inline-block">
+                        <h3 class="d-inline"><span class="btn btn-primary text-white mr-3 mb-3 active">{{ categorie.libelle }}</span></h3>
+                    </a>
+                {% else %}
+                    <a href="{{ path('recette_list', {categorie:categorie.slug, }) }}" class="d-inline-block">
+                        <h3 class="d-inline"><span class="btn btn-primary text-white mr-3 mb-3">{{ categorie.libelle }}</span></h3>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+    {% for recette in recettes %}
+       <div class="col-12 col-md-6 col-lg-4">
+        <div class="blg-post">
+          <a href="{{ path('recette_read', {slug:recette.slug})}}"><img class="img-fluid img-thumbnail" src="{{ dossierImages }}{{ recette.photoName }} "></a>
+          <h4 class="art-ttl"><a href=""> {{recette.titre}}  </a></h4>
+          <p class="art-ind">{{ recette.createdAt|date('d M Y') }}</p>
+          <p class="art-ind">
+          {% for categorie in recette.categorie %}
+						<span class="badge bg-primary text-white mr-2">{{ categorie.libelle }}</span>
+					{% endfor %}
+          </p>
+          <p class="article">{{ recette.description|striptags|u.truncate(100, '...' )}}</p>
+          <a href="{{ path('recette_read', {slug:recette.slug})}}"  class="btn blg-btn">Détails</a></i>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-12">
+
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="{{ path('recette_list', {categorie: app.request.get('categorie'), page: pagePrecedente } ) }}">Previous</a></li>
+      {% for page in 1.. nombrePages %}
+          {% set active = ""%}
+
+        {% if app.request.get('page') == page %}
+          {% set active = "active"%}
+        {% endif %}
+
+        <li class="page-item {{ active }}"><a class="page-link" href="{{ path('recette_list', {categorie: app.request.get('categorie'), page: page } ) }}">{{ page }}</a></li>
+
+      {% endfor %}
+      <li class="page-item"><a class="page-link" href="{{ path('recette_list', {categorie: app.request.get('categorie'), page: pageSuivante } ) }}">Next</a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

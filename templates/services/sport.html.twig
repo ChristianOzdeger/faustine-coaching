@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sport{% endblock %}
+
+{% block body %}
+<!-- Fil d'ariane -->
+	<div class="fil_ariane">
+		<div class="fil-container">
+			<h2>Sport</h2>
+            <p class="text-center">
+            	<a href="{{ path('accueil') }}">Accueil</a>&nbsp;
+            	<i class="fa fa-long-arrow-right"></i>&nbsp;
+            	<span>Sport</span>
+            </p>
+		</div>
+	</div>
+<!-- Fil d'ariane -->
+	<div class="blg-dtl-cnt">
+		<div class="row">
+			<div class="col-12">
+				<div class="art-dtl">
+					<p class="art-para-gras">
+					Le point positif d’avoir un coach sportif également kinésithérapeute, c’est que votre programme sera complétement adapté à vos déficiences,
+					vos douleurs ou encore vos problèmes de santé mais aussi, vos points forts, vos facilités, votre mode de vie et surtout VOS OBJECTIFS.</p>
+					<p class="art-para-gras">Un programme fait sur mesure selon votre niveau d’entrainement, votre vécu mais aussi vos disponibilités. 
+					Il existe un plan d’entrainement pour chacun d’entre vous, du débutant au confirmé. A distance, au cabinet ou à domicile, 
+					demandez votre devis de coaching sportif par mail via le formulaire de contact.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

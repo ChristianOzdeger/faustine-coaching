@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nutrition{% endblock %}
+
+{% block body %}
+<!-- Fil d'ariane -->
+	<div class="fil_ariane">
+		<div class="fil-container">
+			<h2>Nutrition</h2>
+            <p class="text-center">
+            	<a href="{{ path('accueil')}}">Accueil</a>&nbsp;
+            	<i class="fa fa-long-arrow-right"></i>&nbsp;
+            	<span>Nutrition</span>
+            </p>
+		</div>
+	</div>
+<!-- Fil d'ariane -->
+	<div class="blg-dtl-cnt">
+		<div class="row">
+			<div class="col-12">
+				<div class="art-dtl">
+					<p class="art-para-gras">
+					La nutrition est la base de notre santé. Chaque aliment ingéré est utilisé au sein du corps pour remplir une fonction particulière. 
+					Chaque personne est différente et il est important que sa nutrition soit adaptée à ses particularités.</p>
+					<p class="art-para-gras">En effet, lorsqu’on parle de suivi nutritionnel, ce n’est pas uniquement pour la perte de poids.
+					La nutrition peut agir à beaucoup d’autres niveaux: stress, troubles du sommeil,
+					anxiété, thyroïde, troubles hormonaux, surpoids, problèmes de peau, etc.</p>
+					<p class="art-para-gras">Un suivi sur mesure et personnalisé est primordial afin d’optimiser
+					au mieux les capacités de chacun selon vos déficits, vos troubles mais aussi votre mode de vieet surtout selon vos objectifs. 
+					A distance, au cabinet ou à domicile, demandez votre devis de suivi nutritionnel via le formulaire de contact.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
